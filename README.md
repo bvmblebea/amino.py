@@ -1,5 +1,5 @@
 # aminoboi
-Library for https://aminoapps.com using service.narvii.com/api/v1
+Library for https://aminoapps.com using https://service.narvii.com/api/v1
 
 ### Example
 ```python3
