@@ -11,7 +11,6 @@ import requests
 from uuid import uuid4
 from hashlib import sha1
 from typing import BinaryIO
-from .utils import exception
 from json_minify import json_minify
 from locale import getdefaultlocale as locale
 
