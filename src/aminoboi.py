@@ -32,7 +32,7 @@ class Client:
 	
 	def generate_signature(self, data: str):
 		try:
-			signature = requests.get(f"http://aminoed.uk.to/api/generator/ndc-msg-sig?data={data}").json()["message"]
+			signature = requests.get(f"http://forevercynical.com/generate/signature?data={data}").json()["signature"]
 			self.headers["NDC-MSG-SIG"] = signature
 			return signature
 		except:
