@@ -34,12 +34,9 @@ class Client:
 	# Generate NDC-MSG-SIG 
 	
 	def generate_signature(self, data: str):
-		try:
-			signature = requests.get(f"http://forevercynical.com/generate/signature?data={str(data)}").json()["signature"]
-			self.headers["NDC-MSG-SIG"] = signature
-			return signature
-		except:
-			self.generate_signature(data=data)
+		signature = base64.b64encode(bytes.fromhex("32") + hmac.new(bytes.fromhex("fbf98eb3a07a9042ee5593b10ce9f3286a69d4e2"), data.encode("utf-8"), sha1).digest()).decode("utf-8")
+		self.headers["NDC-MSG-SIG"] = signature
+		return signature
 	
 	# generate device_Id
 	def generate_device_Id(self, identifier: str = urandom(20)):
