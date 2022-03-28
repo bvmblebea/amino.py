@@ -1,7 +1,7 @@
 # amino.py
-Library for https://aminoapps.com using https://service.narvii.com/api/v1
+Mobile-API for amino social network
 
-### Example
+## Example
 ```python3
 # login with input
 import amino
