@@ -1,7 +1,4 @@
 # coding = utf-8
-# -- Library made by deluvsushi
-# -- github.com/Zakovskiy помог с библиотекой
-# -- github.com/Minori100 недокодер, чурка, безмамный
 import requests
 from hmac import new
 from os import urandom
