@@ -8,5 +8,5 @@ import amino
 client = amino.Client()
 email = input("-- Email::: ")
 password = input("-- Password::: ")
-client.auth(email=email, password=password)
+client.login(email=email, password=password)
 ```
