@@ -31,10 +31,10 @@ class Amino:
 		self.proxies = proxies
 
 	def generate_signature(self, data: str):
-		self.headers["NDC-MSG-SIG"] = b64encode(
+		self.headers["ndc-msg-sig"] = b64encode(
 			bytes.fromhex("42") + new(bytes.fromhex("f8e7a61ac3f725941e3ac7cae2d688be97f30b93"), data.encode("utf-8"), sha1).digest()
 		).decode("utf-8")
-		return self.headers["NDC-MSG-SIG"]
+		return self.headers["ndc-msg-sig"]
 	
 	def generate_device_id(self, identifier: str):
 		return (
