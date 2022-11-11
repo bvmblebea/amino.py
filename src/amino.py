@@ -1,6 +1,5 @@
 # coding = utf-8
 import requests
-
 from hmac import new
 from os import urandom
 from uuid import uuid4
