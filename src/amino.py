@@ -35,13 +35,13 @@ class Amino:
 
 	def generate_signature(self, data: str) -> str:
 		self.headers["ndc-msg-sig"] = b64encode(
-			bytes.fromhex("42") + new(bytes.fromhex("f8e7a61ac3f725941e3ac7cae2d688be97f30b93"), data.encode("utf-8"), sha1).digest()
+			bytes.fromhex("52") + new(bytes.fromhex("EAB4F1B9E3340CD1631EDE3B587CC3EBEDF1AFA9"), data.encode("utf-8"), sha1).digest()
 		).decode("utf-8")
 		return self.headers["ndc-msg-sig"]
 	
 	def generate_device_id(self, identifier: str) -> str:
 		return (
-			"42" + identifier.hex() + new(bytes.fromhex("02b258c63559d8804321c5d5065af320358d366f"), b"\x42" + identifier, sha1).hexdigest()
+			"42" + identifier.hex() + new(bytes.fromhex("AE49550458D8E7C51D566916B04888BFB8B3CA7D"), b"\x52" + identifier, sha1).hexdigest()
 		).upper()
 	
 	def reload_socket(self) -> None:
