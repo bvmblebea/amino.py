@@ -41,7 +41,7 @@ class Amino:
 	
 	def generate_device_id(self, identifier: str) -> str:
 		return (
-			"42" + identifier.hex() + new(bytes.fromhex("AE49550458D8E7C51D566916B04888BFB8B3CA7D"), b"\x52" + identifier, sha1).hexdigest()
+			"52" + identifier.hex() + new(bytes.fromhex("AE49550458D8E7C51D566916B04888BFB8B3CA7D"), b"\x52" + identifier, sha1).hexdigest()
 		).upper()
 	
 	def reload_socket(self) -> None:
